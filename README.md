@@ -54,35 +54,44 @@
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### `opinion`
 
-**Definition:**
-
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+**Definition:** The poster states their own view about a show, character, actor or episode, positive or negative.
 
 **Example 1:**
->
+> Married With Children was on another level 🤣
 
 **Example 2:**
->
+> The Office is insufferable, I'm sorry :( I just don't get it, I mean I had to suffer through 4 seasons to try and find the funny
+
+### `discussion_prompt`
+
+**Definition:** The poster's main purpose is to ask the community for opinions, recommendations or memories, without stating their own position.
+
+**Example 1:**
+> What character starts amazing and ends insufferable to you
+
+**Example 2:**
+> 14 years ago today “Don’t Trust The B—— in Apt 23” premiered. Did you like the show?
+
+### `news_tribute`
+
+**Definition:** The post shares news, an anniversary, a tribute, a photo or clip, or a promotion, with no view of its own about the show.
+
+**Example 1:**
+> Happy 80th Birthday to The Fonz Henry Winkler 10/30/1945
+
+**Example 2:**
+> First look at the ‘Big Bang Theory’ spin-off series ‘STUART FAILS TO SAVE THE UNIVERSE’.
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `discussion_prompt` vs. `opinion`
 
 **The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+If the post states its own position about a specific show or character, label it `opinion`, even if it ends with a question. If it only asks and states no position, it's `discussion_prompt`. Test: "Could I say what the poster thinks?" If yes, it's `opinion`.
 
-
+Other rules: a mixed opinion (some praise, some criticism) is still `opinion`. A post that shares news or a tribute and adds its own view ("RIP James, everyone should watch Apt 23!") is `opinion`. Sarcasm is labelled by the stance the poster means. Memes with no readable text, off-topic posts and recurring mod threads are dropped.
 
 ---
 
