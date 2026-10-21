@@ -42,8 +42,6 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
-
-
 ---
 
 ## Label Taxonomy
@@ -59,9 +57,11 @@
 **Definition:** The poster states their own view about a show, character, actor or episode, positive or negative.
 
 **Example 1:**
+
 > Married With Children was on another level 🤣
 
 **Example 2:**
+
 > The Office is insufferable, I'm sorry :( I just don't get it, I mean I had to suffer through 4 seasons to try and find the funny
 
 ### `discussion_prompt`
@@ -69,9 +69,11 @@
 **Definition:** The poster's main purpose is to ask the community for opinions, recommendations or memories, without stating their own position.
 
 **Example 1:**
+
 > What character starts amazing and ends insufferable to you
 
 **Example 2:**
+
 > 14 years ago today “Don’t Trust The B—— in Apt 23” premiered. Did you like the show?
 
 ### `news_tribute`
@@ -79,9 +81,11 @@
 **Definition:** The post shares news, an anniversary, a tribute, a photo or clip, or a promotion, with no view of its own about the show.
 
 **Example 1:**
+
 > Happy 80th Birthday to The Fonz Henry Winkler 10/30/1945
 
 **Example 2:**
+
 > First look at the ‘Big Bang Theory’ spin-off series ‘STUART FAILS TO SAVE THE UNIVERSE’.
 
 ### The hardest boundary
@@ -89,6 +93,7 @@
 **Which two labels:** `discussion_prompt` vs. `opinion`
 
 **The decision rule I used every time:**
+
 If the post states its own position about a specific show or character, label it `opinion`, even if it ends with a question. If it only asks and states no position, it's `discussion_prompt`. Test: "Could I say what the poster thinks?" If yes, it's `opinion`.
 
 Other rules: a mixed opinion (some praise, some criticism) is still `opinion`. A post that shares news or a tribute and adds its own view ("RIP James, everyone should watch Apt 23!") is `opinion`. Sarcasm is labelled by the stance the poster means. Memes with no readable text, off-topic posts and recurring mod threads are dropped.
@@ -100,19 +105,19 @@ Other rules: a mixed opinion (some praise, some criticism) is still `opinion`. A
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:**
+**Where the posts came from:** Sitcoms subreddit r/sitcoms
 
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
 Say so plainly — the disclosure is required, not penalised. -->
 
 **Counts per label:**
 
-| Label | Count | Share |
-|---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| Label     | Count | Share |
+| --------- | ----- | ----- |
+|           |       |       |
+|           |       |       |
+|           |       |       |
+| **Total** |       | 100%  |
 
 **Three hard cases**
 
@@ -120,25 +125,28 @@ Say so plainly — the disclosure is required, not penalised. -->
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:*
+
+> _The post:_
 >
-> *Could have been:*
+> _Could have been:_
 >
-> *I chose, because:*
+> _I chose, because:_
 
 **2.**
-> *The post:*
+
+> _The post:_
 >
-> *Could have been:*
+> _Could have been:_
 >
-> *I chose, because:*
+> _I chose, because:_
 
 **3.**
-> *The post:*
+
+> _The post:_
 >
-> *Could have been:*
+> _Could have been:_
 >
-> *I chose, because:*
+> _I chose, because:_
 
 ---
 
@@ -156,8 +164,6 @@ Say so plainly — the disclosure is required, not penalised. -->
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
 
-
-
 ---
 
 ## How I Used AI
@@ -171,15 +177,15 @@ of next unit's variance. -->
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- _What I asked for:_
+- _What came back:_
+- _What I changed:_
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- _What I asked for:_
+- _What came back:_
+- _What I changed:_
 
 **Pre-labelling disclosure:**
 
@@ -195,22 +201,22 @@ of next unit's variance. -->
 <!-- Both models on the same posts. `python baseline.py --trained results.json`
      prints this table for you. -->
 
-| Measure | Baseline | Trained | Difference |
-|---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Measure          | Baseline | Trained | Difference |
+| ---------------- | -------- | ------- | ---------- |
+| Overall accuracy |          |         |            |
+| Macro F1         |          |         |            |
+| F1 — `label_one` |          |         |            |
+| F1 — `label_two` |          |         |            |
 
 **What I predicted before I looked:**
+
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
 
 **What the gap actually means:**
+
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
-
-
 
 ---
 
@@ -220,30 +226,29 @@ of next unit's variance. -->
      spread table; the Target and Verdict columns are yours. -->
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-|---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| --------- | ------ | ------- | ------ | --------- | ------- |
+| 1.        |        |         |        |           |         |
+| 2.        |        |         |        |           |         |
+| 3.        |        |         |        |           |         |
+| 4.        |        |         |        |           |         |
+| 5.        |        |         |        |           |         |
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| true \ predicted |     |     |     |
+| ---------------- | --- | --- | --- |
+| \*\*\*\*         |     |     |     |
+| \*\*\*\*         |     |     |     |
+| \*\*\*\*         |     |     |     |
 
 **My biggest off-diagonal number, and what it means:**
+
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
-
-
 
 ---
 
@@ -252,13 +257,13 @@ of next unit's variance. -->
 <!-- MET or MISSED against LAST UNIT's target. The target has to hold across
      all three seeds, not turn up sometimes. -->
 
-| # | Criterion | Target | Verdict | How I decided |
-|---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| #   | Criterion | Target | Verdict | How I decided |
+| --- | --------- | ------ | ------- | ------------- |
+| 1   |           |        |         |               |
+| 2   |           |        |         |               |
+| 3   |           |        |         |               |
+| 4   |           |        |         |               |
+| 5   |           |        |         |               |
 
 **Diagnoses**
 
@@ -271,8 +276,6 @@ of next unit's variance. -->
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
 
-
-
 ---
 
 ## Agreement Report
@@ -283,7 +286,7 @@ of next unit's variance. -->
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** **_ / 30 = _**%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -306,26 +309,26 @@ of next unit's variance. -->
      what you did across your own 200. -->
 
 **1.**
-> *The post:*
+
+> _The post:_
 >
-> *Staff said / I said:*
+> _Staff said / I said:_
 >
-> *My call, and why:*
+> _My call, and why:_
 >
-> *Which pile:*
+> _Which pile:_
 
 **2.**
-> *The post:*
+
+> _The post:_
 >
-> *Staff said / I said:*
+> _Staff said / I said:_
 >
-> *My call, and why:*
+> _My call, and why:_
 >
-> *Which pile:*
+> _Which pile:_
 
 **What the pattern in my disagreements tells me:**
-
-
 
 ---
 
@@ -338,19 +341,17 @@ of next unit's variance. -->
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-|---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| --------- | ------ | ------- | ------ | --------- | ------- |
+| 1.        |        |         |        |           |         |
+| 2.        |        |         |        |           |         |
+| 3.        |        |         |        |           |         |
+| 4.        |        |         |        |           |         |
+| 5.        |        |         |        |           |         |
 
 **Did it help, and how do I know:**
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
-
-
 
 ---
 
@@ -358,13 +359,10 @@ of next unit's variance. -->
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
-
-
 **The gap between what I meant my labels to capture and what the model
 learned:**
+
 <!-- Two sentences. Your confusion matrix is the evidence. -->
-
-
 
 <!-- ═════════════════════════════════════════════════════════════════════
 
