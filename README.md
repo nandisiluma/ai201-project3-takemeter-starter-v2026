@@ -126,27 +126,27 @@ Say so plainly — the disclosure is required, not penalised. -->
 
 **1.**
 
-> _The post:_
+> _The post:_ "Friends - favorite to least favorite character? What does your list look like? My favorite to least favorite - Rachel, Joey, Ross, Monica, Chandler, Phoebe."
 >
-> _Could have been:_
+> _Could have been:_ `discussion_prompt` or `opinion`
 >
-> _I chose, because:_
+> _I chose `opinion`, because:_ It is phrased as a question and invites replies, but the poster gives their own full ranking, so I can say what they think. That passes my decision rule ("could I say what the poster thinks?"), which makes a stated position win over question form. I first labelled it `discussion_prompt` and changed it after applying the rule. Two similar ranking posts got the same label.
 
 **2.**
 
-> _The post:_
+> _The post:_ "14 years ago today “Veep” premiered. Did you like the show ?"
 >
-> _Could have been:_
+> _Could have been:_ `discussion_prompt` or `news_tribute`
 >
-> _I chose, because:_
+> _I chose `discussion_prompt`, because:_ The anniversary is only the hook. The post's purpose is to ask the community for opinions, and it states no view of its own. About 18 posts followed this template, so I kept two and removed the rest, so near-identical posts could not land on both sides of the train/test split.
 
 **3.**
 
-> _The post:_
+> _The post:_ "Fay Ripley: The pilot of Cold Feet bombed"
 >
-> _Could have been:_
+> _Could have been:_ `news_tribute` or `opinion`
 >
-> _I chose, because:_
+> _I chose `opinion`, because:_ The headline carries a verdict on the show (it "bombed"), not just an event. The catch is that the view belongs to the actress, not the poster, so this is the weakest of my `opinion` labels. A reasonable reader could call it `news_tribute`.
 
 ---
 
