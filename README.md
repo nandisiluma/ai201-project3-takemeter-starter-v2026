@@ -108,16 +108,16 @@ Other rules: a mixed opinion (some praise, some criticism) is still `opinion`. A
 **Where the posts came from:** Sitcoms subreddit r/sitcoms
 
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+Labelled about 20-30 cold, and then pre-labelled the rest with AI and reviewed.
 
 **Counts per label:**
 
-| Label     | Count | Share |
-| --------- | ----- | ----- |
-|           |       |       |
-|           |       |       |
-|           |       |       |
-| **Total** |       | 100%  |
+| Label             | Count | Share |
+| ----------------- | ----- | ----- |
+| discussion_prompt | 85    | 46%   |
+| opinion           | 65    | 35%   |
+| news_tribute      | 34    | 18%   |
+| **Total**         | 184   | 100%  |
 
 **Three hard cases**
 
@@ -155,6 +155,9 @@ Say so plainly — the disclosure is required, not penalised. -->
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
 **Base model:**
+
+device: cpu (CPU)
+torch: 2.2.2
 
 **Settings:** <!-- epochs, learning rate, batch size, seed -->
 
