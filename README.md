@@ -42,6 +42,13 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
+TakeMeter reads posts from r/sitcoms, a subreddit where fans talk about TV
+comedies, and sorts each one by what the post is doing. It labels a post as an
+`opinion`, a `discussion_prompt` , or `news_tribute`. The point
+is to tell apart posts that offer a take from posts that ask for one, which is
+a line that question-style titles blur. It is trained and run entirely on my
+own machine, using a small model fine-tuned on about 180 labelled posts.
+
 ---
 
 ## Label Taxonomy
@@ -161,11 +168,28 @@ torch: 2.2.2
 
 **Settings:** <!-- epochs, learning rate, batch size, seed -->
 
+EPOCHS = 3
+LEARNING_RATE = 2e-5
+BATCH_SIZE = 16
+
+seed = 42
+
 **Anything I changed from the defaults, and why:**
 
 **Split sizes:** <!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
+
+train 128 · val 28 · test 28
+
+                   train  val  test
+
+label  
+discussion_prompt 59 13 13
+opinion 45 10 10
+news_tribute 24 5 5
+
+[note] 'news_tribute' has only 5 examples in the test split.
 
 ---
 
@@ -178,19 +202,20 @@ of next unit's variance. -->
      workflow and disclosing it costs you nothing. Not disclosing it is the
      problem. -->
 
-**Moment 1**
+**Moment 1: choosing the labels**
 
-- _What I asked for:_
-- _What came back:_
-- _What I changed:_
+- _What I asked for:_ I asked which labels would suit the data. I started from hot_take / analysis / reaction, and AI read the first 110 posts I'd collected.
+- _What came back:_ AI said those labels fit r/sitcoms poorly: analysis was under 3% of posts and reaction was rare. About 45% of posts were questions asking for opinions. It proposed praise / criticism / discussion_prompt, with a decision rule for questions that also state a view. After labelling, criticism was only 11 of 154 rows (7%), so I asked about balance and it offered options, with counts for each.
+- _What I changed:_ I chose to merge praise and criticism into one `opinion` label and add `news_tribute` for posts with no view of their own, which gave a 52 / 31 / 17% split. I kept the decision rule ("could I say what the poster thinks?") and applied it myself, which is why I moved the Friends ranking post from discussion_prompt to opinion.
 
-**Moment 2**
+**Moment 2: avoiding leakage**
 
-- _What I asked for:_
-- _What came back:_
-- _What I changed:_
+- _What I asked for:_ I said I wanted to absolutely avoid leakage between train and test, after AI flagged posts that looked alike.
+- _What came back:_ AI read how the notebook splits (a random 70/15/15 split, with a duplicate check that only catches exact copies) and found 18 near-identical posts of the form "N years ago today 'Show' premiered. Did you like the show?". It explained that they would land on both sides of the split and inflate my scores, and recommended keeping two.
+- _What I changed:_ I agreed, and chose to keep two of the 18 and remove the other 16, taking the dataset from 200 to 184 posts. I also relabelled the one inconsistent sibling ("Rules Of Engagement") to discussion_prompt before it was removed.
 
 **Pre-labelling disclosure:**
+I used AI to pre-label my dataset, and I reviewed it. I labelled about 20-30 posts cold first. AI then pre-labelled the rest, under the definitions I wrote, and I read every row and agreed with the labels except four I changed myself (the Friends and Boy Meets World ranking posts and the "best outfits" post from discussion_prompt to opinion, and the Cold Feet headline from news_tribute to opinion). AI also wrote the script that collected the posts from r/sitcoms and the first drafts of my label definitions and hard cases, which I edited. The final labels, the decision rule and the choice to merge and cut posts are mine.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
