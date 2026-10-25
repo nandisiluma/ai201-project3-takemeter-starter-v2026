@@ -229,17 +229,17 @@ I used AI to pre-label my dataset, and I reviewed it. I labelled about 20-30 pos
 <!-- Both models on the same posts. `python baseline.py --trained results.json`
      prints this table for you. -->
 
-| Measure          | Baseline | Trained | Difference |
-| ---------------- | -------- | ------- | ---------- |
-| Overall accuracy |          |         |            |
-| Macro F1         |          |         |            |
-| F1 — `label_one` |          |         |            |
-| F1 — `label_two` |          |         |            |
+| Measure                  | Baseline | Trained | Difference |
+| ------------------------ | -------- | ------- | ---------- |
+| Overall accuracy         | 0.643    | 0.464   | -0.179     |
+| Macro F1                 | 0.472    | 0.217   | -0.256     |
+| F1 — `discussion_prompt` | 0.727    | 0.650   | -0.077     |
+| F1 — `news_tribute`      | 0.000    | 0.000   | +0.000     |
+| F1 — `opinion`           | 0.690    | 0.000   | -0.690     |
 
 **What I predicted before I looked:**
 
-<!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
-     prediction made afterwards isn't one. -->
+My trained model will have better F1 scores.
 
 **What the gap actually means:**
 
