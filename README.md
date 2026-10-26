@@ -268,17 +268,25 @@ My trained model will have better F1 scores for the smaller datasets with labels
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |     |     |     |
-| ---------------- | --- | --- | --- |
-| \*\*\*\*         |     |     |     |
-| \*\*\*\*         |     |     |     |
-| \*\*\*\*         |     |     |     |
+| true \ predicted      | discussion_prompt | opinion | news_tribute |
+| --------------------- | ----------------- | ------- | ------------ |
+| **discussion_prompt** | 12                | 1       | 0            |
+| **opinion**           | 3                 | 6       | 1            |
+| **news_tribute**      | 2                 | 2       | 3            |
 
 **My biggest off-diagonal number, and what it means:**
 
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
+
+Biggest confusion: 3 real `opinion` posts called `discussion_prompt`.
+The other direction: 1 real `discussion_prompt` posts called `opinion`.
+
+That's lopsided — the model leans toward `discussion_prompt` on this pair.
+A direction like that usually points at labelling rather than the
+model.
+Your agreement report is the thing that can tell you which.
 
 ---
 
