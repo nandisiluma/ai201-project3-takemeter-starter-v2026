@@ -182,16 +182,16 @@ Changed epoch size to 10 because the model was returning 0.00 f-scores for two l
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
 
-train 128 · val 28 · test 28
+train 139 · val 31 · test 30
 
                    train  val  test
 
 label  
-discussion_prompt 59 13 13
-opinion 45 10 10
-news_tribute 24 5 5
+discussion_prompt 58 13 13
+opinion 47 11 10
+news_tribute 34 7 7
 
-[note] 'news_tribute' has only 5 examples in the test split.
+[note] 'news_tribute' has only 7 examples in the test split.
 
 ---
 
