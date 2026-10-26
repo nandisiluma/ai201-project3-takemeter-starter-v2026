@@ -168,13 +168,15 @@ torch: 2.2.2
 
 **Settings:** <!-- epochs, learning rate, batch size, seed -->
 
-EPOCHS = 3
+EPOCHS = 10
 LEARNING_RATE = 2e-5
 BATCH_SIZE = 16
 
 seed = 42
 
 **Anything I changed from the defaults, and why:**
+
+Changed epoch size to 10 because the model was returning 0.00 f-scores for two labels, likely defaulting to one label.
 
 **Split sizes:** <!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
