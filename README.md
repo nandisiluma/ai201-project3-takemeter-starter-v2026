@@ -233,15 +233,15 @@ I used AI to pre-label my dataset, and I reviewed it. I labelled about 20-30 pos
 
 | Measure                  | Baseline | Trained | Difference |
 | ------------------------ | -------- | ------- | ---------- |
-| Overall accuracy         | 0.643    | 0.464   | -0.179     |
-| Macro F1                 | 0.472    | 0.217   | -0.256     |
-| F1 — `discussion_prompt` | 0.727    | 0.650   | -0.077     |
-| F1 — `news_tribute`      | 0.000    | 0.000   | +0.000     |
-| F1 — `opinion`           | 0.690    | 0.000   | -0.690     |
+| Overall accuracy         | 0.600    | 0.700   | +0.100     |
+| Macro F1                 | 0.457    | 0.659   | +0.202     |
+| F1 — `discussion_prompt` | 0.727    | 0.800   | +0.073     |
+| F1 — `news_tribute`      | 0.000    | 0.545   | +0.545     |
+| F1 — `opinion`           | 0.645    | 0.632   | -0.014     |
 
 **What I predicted before I looked:**
 
-My trained model will have better F1 scores.
+My trained model will have better F1 scores for the smaller datasets with labels news_tribute and opinion.
 
 **What the gap actually means:**
 

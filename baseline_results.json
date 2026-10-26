@@ -1,13 +1,13 @@
 {
   "model": "facebook/bart-large-mnli",
-  "n": 28,
+  "n": 30,
   "seed": 42,
   "held_out": true,
   "used_definitions": true,
   "scores": {
-    "n": 28,
-    "accuracy": 0.6428571428571429,
-    "f1_macro": 0.4723092998955069,
+    "n": 30,
+    "accuracy": 0.6,
+    "f1_macro": 0.4574780058651027,
     "per_label": {
       "discussion_prompt": {
         "precision": 0.8888888888888888,
@@ -19,64 +19,39 @@
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0,
-        "support": 5
+        "support": 7
       },
       "opinion": {
-        "precision": 0.5263157894736842,
+        "precision": 0.47619047619047616,
         "recall": 1.0,
-        "f1": 0.6896551724137931,
+        "f1": 0.6451612903225806,
         "support": 10
       }
     }
   },
   "predictions": [
     {
-      "text": "Today we celebrate 75 years of this classic iconic show. I Love Lucy has been entertaining the world for 75 years. Thank you to everyone who made this show. And thank you to the fans who continue to watch it to this day.",
-      "gold": "opinion",
-      "predicted": "opinion"
-    },
-    {
-      "text": "What did you think of The King Of Queens",
+      "text": "What\u2019s the funniest scene in sitcom history that made you laugh so hard the most?\n\nRoseanne: Jackie\u2019s reaction to her father\u2019s death by calling her aunt about it. Laurie Metcalf was so hysterical in that scene.",
       "gold": "discussion_prompt",
       "predicted": "opinion"
     },
     {
-      "text": "What's your opinion about this show??\nI have heard a lot of things about this show... Should I watch it? Is it actually good or mid?",
-      "gold": "discussion_prompt",
-      "predicted": "discussion_prompt"
-    },
-    {
-      "text": "What is your favorite \"serious\" episode of a sitcom?\n\nA serious episode that has anything to do with a serious topic like Alcohol, Racism, Drugs, AIDS, Crime, Gangs, Divorce, etc.",
-      "gold": "discussion_prompt",
-      "predicted": "discussion_prompt"
-    },
-    {
-      "text": "Yes Dear\n\nI absolutely loved This show must have wat he'd it everyday \ud83e\udd37\ud83c\udffb",
-      "gold": "opinion",
-      "predicted": "opinion"
-    },
-    {
-      "text": "ALF premiered 40 years ago today on NBC. It lasted 4 years with 97 episodes. The man who played the father was so disgusted by the show that as soon as his final scene was wrapped up he immediately left the studio without a goodbye. He later made out with men while smoking crack",
+      "text": "Two Alien Bears and a Human: \"The Pilot Episode\"",
       "gold": "news_tribute",
       "predicted": "opinion"
     },
     {
-      "text": "Watching \"Martin\" for the first time, the episode where the plumber dies is so unhinged and hilarious. Props to Mike Hagerty for somehow keeping it together without breaking throughout all the shenanigans.\n\nWhat are your thoughts on \"Martin\" ?",
-      "gold": "opinion",
-      "predicted": "opinion"
-    },
-    {
-      "text": "Opinions on Arrested Development?\n\nHave you seen Arrested Development? \n It's considered one of the greatest comedies and one of the greatest shows!!!! \n It has a great cast and clever writing. \n People keep saying to stop watching after Season 3. Did you think 4 & 5 were that bad? \n What are your overall thoughts on Arrested Development?",
-      "gold": "opinion",
-      "predicted": "opinion"
-    },
-    {
-      "text": "Playing drunk.\n\nWhat do you think is the best sitcom performance where the actor/actors have to play drunk?",
+      "text": "Whats your favorite sitcom set in the Great Plains? (Not Texas)",
       "gold": "discussion_prompt",
       "predicted": "discussion_prompt"
     },
     {
-      "text": "What couples do you feel like they had no chemistry between the actors?\nI never really bought into Jake and Amy from B99 as a couple. I like the characters, but it didn\u2019t feel the sparks between the actors.",
+      "text": "I am a longtime fan of Community and have watched it countless times over the years. While I loved other modern sitcoms like The Office, Parks and Rec, It\u2019s Always Sunny in Philadelphia, Malcolm in the Middle, etc., nothing really scratched the same itch, even slightly (except Rick and Morty at times, but that\u2019s because it\u2019s another Dan Harmon show).",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
+      "text": "I believe Americans are the best at making sitcoms !Period .\n\n My most fav are (in the order)\n 1 Modern family\n 2 HIMYM\n 3 The Office\n 4 BBT\n 5 Friends (kind of over the show rn )but still it was the first American sit com i watched and loved .",
       "gold": "opinion",
       "predicted": "opinion"
     },
@@ -86,27 +61,52 @@
       "predicted": "discussion_prompt"
     },
     {
+      "text": "Name another show in the last 30 years that had this many talented future stars.\n26 years later and I\u2019m still not over the fact that they didn\u2019t give this show a second season!",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Sam's Victim Support Group\n\nThis is one of the best written and acted mini stories Cheers ever came up with. Sam's 'vette is stolen, and he forms a victim supplrt group.",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Fay Ripley: The pilot of Cold Feet bombed",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Watching Friends today is like watching show from 1962 when Friends first aired.",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
+      "text": "What's your opinion about this show??\nI have heard a lot of things about this show... Should I watch it? Is it actually good or mid?",
+      "gold": "discussion_prompt",
+      "predicted": "discussion_prompt"
+    },
+    {
+      "text": "What's your favorite sitcoms that you watched recently?\n\nWatched this show twice all the way through and it's excellent",
+      "gold": "discussion_prompt",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Fresh off the boat\n\nThis show is a great mix of 90s nostalgia and comedy gold, the first three seasons are the best in my opinion. Eddy is cool but man Luis is halarious and steals the show.",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
       "text": "Still Standing\n\nI\u2019ve just come across Still Standing online and I\u2019m wondering if anyone has seen it and if it\u2019s worth watching?",
       "gold": "discussion_prompt",
       "predicted": "opinion"
     },
     {
-      "text": "Anyone know what the music is on Maxwell\u2019s wall in The Nanny?\n\nI\u2019m sure it\u2019s from some opera",
+      "text": "These shows premiered on this day. Which one is your favorite ?",
       "gold": "discussion_prompt",
       "predicted": "discussion_prompt"
     },
     {
-      "text": "What\u2019s the funniest scene in sitcom history that made you laugh so hard the most?\n\nRoseanne: Jackie\u2019s reaction to her father\u2019s death by calling her aunt about it. Laurie Metcalf was so hysterical in that scene.",
-      "gold": "discussion_prompt",
-      "predicted": "opinion"
-    },
-    {
-      "text": "What \"Will they/won't they\" did you not care about?",
-      "gold": "discussion_prompt",
-      "predicted": "discussion_prompt"
-    },
-    {
-      "text": "Beyond the recent podcast discourse: why doesn\u2019t Living Single get more credit for having one of the sharpest ensemble scripts of the '90s?",
+      "text": "Sitcoms that deserved more seasons. Should have stayed on longer during their era.\n\nThe Golden Girls - 1992 to 1995 (three more seasons)\n Arrested Development 2006 to 2010 (four more seasons)\n The Office 2013 to 2014 (one more season)\n A Different World 1993 to 1996 (three more seasons)\n The Fresh Prince of Bel Air 1996 to 1997 (one more season)",
       "gold": "opinion",
       "predicted": "opinion"
     },
@@ -116,12 +116,7 @@
       "predicted": "opinion"
     },
     {
-      "text": "Poor doorman has to work 2 jobs to put food on the table for mother and baby",
-      "gold": "opinion",
-      "predicted": "opinion"
-    },
-    {
-      "text": "I am a longtime fan of Community and have watched it countless times over the years. While I loved other modern sitcoms like The Office, Parks and Rec, It\u2019s Always Sunny in Philadelphia, Malcolm in the Middle, etc., nothing really scratched the same itch, even slightly (except Rick and Morty at times, but that\u2019s because it\u2019s another Dan Harmon show).",
+      "text": "Immediately decided to watch Resident Alien based on the Netflix description \u2018Twin Peaks meets Alf,\u2019 plus Alan Tudyk. No regrets\n\nI know it\u2019s not a technically a sitcom because it\u2019s 40 minutes long, but it\u2019s far more comedy than drama. I\u2019m near the end of season four, so please no spoilers. \n Anyone else come around on this show recently? Or been a fan since the beginning? It\u2019s my favorite new comedy in a while.",
       "gold": "opinion",
       "predicted": "opinion"
     },
@@ -131,42 +126,57 @@
       "predicted": "opinion"
     },
     {
-      "text": "See you on the other side, Hayden\n\nWay too young to go",
-      "gold": "news_tribute",
-      "predicted": "opinion"
-    },
-    {
-      "text": "Two Alien Bears and a Human: \"The Pilot Episode\"",
-      "gold": "news_tribute",
-      "predicted": "opinion"
-    },
-    {
       "text": "This might not be sitcom related but i still want to share this",
       "gold": "news_tribute",
       "predicted": "discussion_prompt"
     },
     {
-      "text": "Best Comedy Show in the World, Ever! El Chavo del Ocho Vs Los Simuladores",
+      "text": "Did you know the original pilot for Leave It To Beaver practically had an entire different cast and was called \u201cIt\u2019s A Small World?\u201d\u2026 It aired on April 23, 1957, 6 months before Leave It To Beaver premiered.",
+      "gold": "news_tribute",
+      "predicted": "opinion"
+    },
+    {
+      "text": "What did you think of The King Of Queens",
       "gold": "discussion_prompt",
       "predicted": "opinion"
     },
     {
-      "text": "Whats your favorite sitcom set in the Great Plains? (Not Texas)",
+      "text": "A TV couple with chemistry that is magic",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
+      "text": "See you on the other side, Hayden\n\nWay too young to go",
+      "gold": "news_tribute",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Sad day today. We lost an icon and legend Dolly Parton has died at the age of 80. Here she is on the set of the tv show Reba.",
+      "gold": "news_tribute",
+      "predicted": "opinion"
+    },
+    {
+      "text": "What's your favorite end-of-episode joke that streaming platforms try to skip?",
       "gold": "discussion_prompt",
       "predicted": "discussion_prompt"
     },
     {
-      "text": "Sam's Victim Support Group\n\nThis is one of the best written and acted mini stories Cheers ever came up with. Sam's 'vette is stolen, and he forms a victim supplrt group.",
-      "gold": "opinion",
+      "text": "What \"Will they/won't they\" did you not care about?",
+      "gold": "discussion_prompt",
+      "predicted": "discussion_prompt"
+    },
+    {
+      "text": "Actress Eva Marie Saint Passses Away At 102!!",
+      "gold": "news_tribute",
       "predicted": "opinion"
     },
     {
-      "text": "Raising Hope\nThis is one of my all-time favorite shows the level of Comedy written into the show was amazing Burton Virginia is energy on this was half of the show and maw maw maybe one of the funniest characters I've ever seen, but it's the heart in the show that really makes it good.",
-      "gold": "opinion",
-      "predicted": "opinion"
+      "text": "Playing drunk.\n\nWhat do you think is the best sitcom performance where the actor/actors have to play drunk?",
+      "gold": "discussion_prompt",
+      "predicted": "discussion_prompt"
     },
     {
-      "text": "These shows premiered on this day. Which one is your favorite ?",
+      "text": "What is your favorite \"serious\" episode of a sitcom?\n\nA serious episode that has anything to do with a serious topic like Alcohol, Racism, Drugs, AIDS, Crime, Gangs, Divorce, etc.",
       "gold": "discussion_prompt",
       "predicted": "discussion_prompt"
     }
