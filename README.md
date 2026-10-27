@@ -324,7 +324,7 @@ Your agreement report is the thing that can tell you which.
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** **_ / 30 = _**%
+**Agreement rate:** **29 / 30 = 97**%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -348,13 +348,13 @@ Your agreement report is the thing that can tell you which.
 
 **1.**
 
-> _The post:_
+> _The post:_"Checked the entry lists. 41% of this year's field have never run the distance before, against 26% five years ago. That's why the finish-line photos look different, not because standards dropped."
 >
-> _Staff said / I said:_
+> _Staff said / I said:_"Staff said analysis / I said hot_take"
 >
-> _My call, and why:_
+> _My call, and why:_"staff's analysis label is right. The rule asks whether the checkable fact is load-bearing, and here the 41% vs 26% first-timer figure is the reason offered for why the photos look different ('That's why...'), not decoration on a conclusion already reached. I judged the inference (first-timer share explaining the photos) and found it weak, but the rule tests whether the number carries the argument, not whether the argument is sound."
 >
-> _Which pile:_
+> _Which pile:_"the rule covered it and I applied it loosely"
 
 **2.**
 

@@ -1,0 +1,13 @@
+{
+  "compared": 30,
+  "agreed": 29,
+  "agreement_rate": 0.9666666666666667,
+  "disagreements": [
+    {
+      "text": "Checked the entry lists. 41% of this year's field have never run the distance before, against 26% five years ago. That's why the finish-line photos look different, not because standards dropped.",
+      "staff": "analysis",
+      "mine": "hot_take"
+    }
+  ],
+  "staff_posts_not_in_mine": 0
+}
