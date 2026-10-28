@@ -1,0 +1,470 @@
+[
+  {
+    "seed": 42,
+    "accuracy": 0.7,
+    "rows": [
+      {
+        "gold": "discussion_prompt",
+        "predicted": "opinion",
+        "confidence": 0.5891673564910889
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "news_tribute",
+        "confidence": 0.7144964337348938
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8642414808273315
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.7736703157424927
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.5747701525688171
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8697143793106079
+      },
+      {
+        "gold": "opinion",
+        "predicted": "discussion_prompt",
+        "confidence": 0.629250168800354
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.43614426255226135
+      },
+      {
+        "gold": "opinion",
+        "predicted": "news_tribute",
+        "confidence": 0.7088311314582825
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.43250903487205505
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.7907617092132568
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.7698600888252258
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.7500088214874268
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.6243879795074463
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8114113211631775
+      },
+      {
+        "gold": "opinion",
+        "predicted": "discussion_prompt",
+        "confidence": 0.5386286973953247
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "news_tribute",
+        "confidence": 0.7591930627822876
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.72081059217453
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.6720062494277954
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "discussion_prompt",
+        "confidence": 0.5920696258544922
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "opinion",
+        "confidence": 0.40061742067337036
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.7883592247962952
+      },
+      {
+        "gold": "opinion",
+        "predicted": "discussion_prompt",
+        "confidence": 0.4754946529865265
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "discussion_prompt",
+        "confidence": 0.44259580969810486
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "opinion",
+        "confidence": 0.381611168384552
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8551127314567566
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8475954532623291
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "news_tribute",
+        "confidence": 0.7022823095321655
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8090633153915405
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8102339506149292
+      }
+    ]
+  },
+  {
+    "seed": 7,
+    "accuracy": 0.6333333333333333,
+    "rows": [
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.6097266674041748
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.40729865431785583
+      },
+      {
+        "gold": "opinion",
+        "predicted": "discussion_prompt",
+        "confidence": 0.7202874422073364
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.5144714713096619
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.7600982189178467
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "news_tribute",
+        "confidence": 0.5212079286575317
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.7831287384033203
+      },
+      {
+        "gold": "opinion",
+        "predicted": "discussion_prompt",
+        "confidence": 0.5197250843048096
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.5615402460098267
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "opinion",
+        "confidence": 0.5484883189201355
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "discussion_prompt",
+        "confidence": 0.42562973499298096
+      },
+      {
+        "gold": "opinion",
+        "predicted": "discussion_prompt",
+        "confidence": 0.5695288181304932
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.723368763923645
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.5408245921134949
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8092349767684937
+      },
+      {
+        "gold": "opinion",
+        "predicted": "news_tribute",
+        "confidence": 0.5104108452796936
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "opinion",
+        "confidence": 0.4455704987049103
+      },
+      {
+        "gold": "opinion",
+        "predicted": "discussion_prompt",
+        "confidence": 0.4936613142490387
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.7339124083518982
+      },
+      {
+        "gold": "opinion",
+        "predicted": "discussion_prompt",
+        "confidence": 0.5985580682754517
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "news_tribute",
+        "confidence": 0.6157042384147644
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "opinion",
+        "confidence": 0.4986875653266907
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.6202927827835083
+      },
+      {
+        "gold": "opinion",
+        "predicted": "discussion_prompt",
+        "confidence": 0.5057284832000732
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.6920871734619141
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "news_tribute",
+        "confidence": 0.4770936667919159
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.5706422924995422
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.7060138583183289
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.7901169061660767
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "news_tribute",
+        "confidence": 0.4765731394290924
+      }
+    ]
+  },
+  {
+    "seed": 2024,
+    "accuracy": 0.6666666666666666,
+    "rows": [
+      {
+        "gold": "opinion",
+        "predicted": "discussion_prompt",
+        "confidence": 0.4639964699745178
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.6619150042533875
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "news_tribute",
+        "confidence": 0.4315643608570099
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "news_tribute",
+        "confidence": 0.4749792814254761
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8588870167732239
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.47781509160995483
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "news_tribute",
+        "confidence": 0.5073993802070618
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.6160234212875366
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.6138430833816528
+      },
+      {
+        "gold": "opinion",
+        "predicted": "discussion_prompt",
+        "confidence": 0.611980140209198
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "news_tribute",
+        "confidence": 0.5030059814453125
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8341406583786011
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.7828011512756348
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.7182450890541077
+      },
+      {
+        "gold": "opinion",
+        "predicted": "news_tribute",
+        "confidence": 0.36705297231674194
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "opinion",
+        "confidence": 0.5707306861877441
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "opinion",
+        "confidence": 0.7487624287605286
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.5193362236022949
+      },
+      {
+        "gold": "opinion",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8178092241287231
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8343760967254639
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "discussion_prompt",
+        "confidence": 0.6905823945999146
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "opinion",
+        "confidence": 0.5373255610466003
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.6942549347877502
+      },
+      {
+        "gold": "opinion",
+        "predicted": "opinion",
+        "confidence": 0.70604008436203
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "opinion",
+        "confidence": 0.5211973786354065
+      },
+      {
+        "gold": "opinion",
+        "predicted": "discussion_prompt",
+        "confidence": 0.525140643119812
+      },
+      {
+        "gold": "news_tribute",
+        "predicted": "news_tribute",
+        "confidence": 0.5017439723014832
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8480575680732727
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.8567079901695251
+      },
+      {
+        "gold": "discussion_prompt",
+        "predicted": "discussion_prompt",
+        "confidence": 0.4600030481815338
+      }
+    ]
+  }
+]

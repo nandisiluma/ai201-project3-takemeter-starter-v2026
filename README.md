@@ -255,13 +255,22 @@ My trained model will have better F1 scores for the smaller datasets with labels
 <!-- Five criteria across three seeds. The notebook's section 6 prints the
      spread table; the Target and Verdict columns are yours. -->
 
-| Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-| --------- | ------ | ------- | ------ | --------- | ------- |
-| 1.        |        |         |        |           |         |
-| 2.        |        |         |        |           |         |
-| 3.        |        |         |        |           |         |
-| 4.        |        |         |        |           |         |
-| 5.        |        |         |        |           |         |
+| Criterion                                                                                                             | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
+| --------------------------------------------------------------------------------------------------------------------- | ------ | ------- | ------ | --------- | ------- |
+| 1. The model accurately classifies a post at least 80% of the time.                                                   | 0.80   | 0.70    | 0.633  | 0.667     | MISSED  |
+| 2. If someone else labeled the data, we would agree at least 90% of the time.                                         | 0.90   | 0.967   | 0.967  | 0.967     | MET     |
+| 3. Predictions the model rates at 0.90 or higher are right at least 95% of the time (original)                        | 0.95   | none    | none   | none      | MISSED  |
+| 3b. The model's most-confident third of test predictions are right at least 90% of the time, on every seed. (revised) | 0.90   | 1.00    | 0.90   | 0.80      | MISSED  |
+| 4. Each label has an F1 score of at least 0.80 for all three labels                                                   | 0.8    | 0.545   | 0.375  | 0.526     | MISSED  |
+| 5. At most 25% of true opinion posts are predicted as discussion_prompt                                               | 0.25   | 0.30    | 0.60   | 0.40      | MISSED  |
+
+| Measure                  | Seed 42 | Seed 7 | Seed 2024 | Spread |
+| ------------------------ | ------- | ------ | --------- | ------ |
+| Overall accuracy         | 0.700   | 0.633  | 0.667     | 0.067  |
+| Macro F1                 | 0.659   | 0.597  | 0.670     | 0.073  |
+| F1 — `discussion_prompt` | 0.800   | 0.750  | 0.714     | 0.086  |
+| F1 — `opinion`           | 0.632   | 0.375  | 0.526     | 0.257  |
+| F1 — `news_tribute`      | 0.545   | 0.667  | 0.769     | 0.224  |
 
 ### Confusion matrix
 
@@ -295,13 +304,24 @@ Your agreement report is the thing that can tell you which.
 <!-- MET or MISSED against LAST UNIT's target. The target has to hold across
      all three seeds, not turn up sometimes. -->
 
-| #   | Criterion | Target | Verdict | How I decided |
-| --- | --------- | ------ | ------- | ------------- |
-| 1   |           |        |         |               |
-| 2   |           |        |         |               |
-| 3   |           |        |         |               |
-| 4   |           |        |         |               |
-| 5   |           |        |         |               |
+| Criterion                                                                                                             | Target | Seed 1 | Seed 2 | Seed 3 | Verdict |
+| --------------------------------------------------------------------------------------------------------------------- | ------ | ------ | ------ | ------ | ------- |
+| 1. The model accurately classifies a post at least 80% of the time.                                                   | 0.80   | 0.70   | 0.633  | 0.667  | MISSED  |
+| 2. If someone else labeled the data, we would agree at least 90% of the time.                                         | 0.90   | 0.967  | 0.967  | 0.967  | MET     |
+| 3. Predictions the model rates at 0.90 or higher are right at least 95% of the time (original)                        | 0.95   | none   | none   | none   | MISSED  |
+| 3b. The model's most-confident third of test predictions are right at least 90% of the time, on every seed. (revised) | 0.90   | 1.00   | 0.90   | 0.80   | MISSED  |
+| 4. Each label has an F1 score of at least 0.80 for all three labels                                                   | 0.8    | 0.545  | 0.375  | 0.526  | MISSED  |
+| 5. At most 25% of true opinion posts are predicted as discussion_prompt                                               | 0.25   | 0.30   | 0.60   | 0.40   | MISSED  |
+
+Columns are seeds 42, 7 and 2024.
+
+**How these were measured, and decisions made**
+
+- **Setup.** Seeds 42, 7 and 2024 with the notebook's settings (10 epochs, lr 2e-5, batch 16, max length 128, DistilBERT) on `labels.csv`, CPU. Each seed has a 30-post test split (13 `discussion_prompt`, 10 `opinion`, 7 `news_tribute`). Criteria 1, 4 and 5 come from `results_three_seeds_before.json`.
+- **Criterion 2 is not a model measurement.** It is my agreement with staff on 30 posts (`agreement_results.json`: 29/30 = 0.967), so there is one number, which I repeated in all three seed columns. One post moves it 3.3 points, so 27/30 is the lowest passing count.
+- **Criterion 3.** The saved `results.json` only had a most-confident-third summary, so I re-ran the three seeds with per-prediction confidence saved (`confidence_predictions_before.json`). It reproduced the earlier accuracies exactly (0.700, 0.633, 0.667). **No prediction reached 0.90 on any seed** (highest 0.870, 0.809, 0.859), so "right at least 95% of the time" has no posts to be right about. "none" in the table means that, so the original can't be passed or failed on the numbers, and I count it as not met. That is why I revised it (3b), keeping the original line in `criteria.md` and adding the revision underneath. I picked the revised bar for being measurable and still strict (one error allowed in 10), not tuned to pass: it is missed on seed 2024.
+- **Criterion 4 numbers.** The table shows each seed's lowest label F1: `news_tribute` on seed 42, `opinion` on seeds 7 and 2024. The full per-label figures are in the spread table above.
+- **Criterion 5 denominator.** Every seed has exactly 10 true `opinion` posts in the test split, so one post is 10 points. Seed 42's 30% is 3 posts, a narrow miss.
 
 **Diagnoses**
 
@@ -313,6 +333,19 @@ Your agreement report is the thing that can tell you which.
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
+
+A cause that applies to all four misses: I chose the targets without a reason from my data.
+I wrote 0.80, 0.95, 0.80 and 25% as numbers that sounded reasonable, not from a baseline, a class count or a measured spread. That means a miss can't tell me whether the model is bad or whether the bar was unreachable, and I have to work that out from the evidence below instead.
+Two of my written justifications in `criteria.md` are also weaker than they looked:
+
+Criterion 1 argues a one-label guesser gets 50%, but with three labels chance is about 33%, and always guessing `discussion_prompt` would get 13/30 = 0.433 on this test split.
+
+Criterion 3's "leaves almost no room for confident mistakes" is true of any project and says nothing about this model.
+
+Criterion 1 (accuracy). Too little data for the task, plus an unanchored target. Every seed misses, the spread across seeds is 6.7 points, and the model still beats the 0.600 zero-shot baseline on seed 42 and the 0.433 majority guess on every seed. The agreement report (0.967) makes label noise a less likely main cause than data size, though the one loose application means it isn't ruled out. The best seed is still 10 points short of 0.80, so it isn't one bad draw.
+Criterion 3 (confidence, revised). The model's confidence is weak. On seed 2024 its most-confident third is no more accurate than its least-confident third (0.80 vs 0.80). I labeled the cause, a small training set with close classes, as a guess, because I haven't tested it. Mean confidence when right is only 0.63 to 0.73 and when wrong 0.53 to 0.59, so confidence says little about correctness. On seeds 42 and 7 it carries some signal (least-confident third 0.30 and 0.40), but not on seed 2024. One wrong post in the top 10 is 10 points, so the revised bar is itself noisy.
+Criterion 4 (per-label F1). Too few examples per label. The weakest label changes between seeds, which looks like noise from small test splits and not one label the model can't learn. news_tribute scores 0.545 to 0.769 against 0.000 for the baseline. `news_tribute` has 7 test posts and `opinion` 10, so one post moves recall by 14 and 10 points. The lowest label is `news_tribute` on seed 42 but `opinion` on seeds 7 and 2024. Only `discussion_prompt` reached 0.80, and only on seed 42. I expected this one to fail, since I held the smallest label (31 rows) to the same bar as the biggest.
+Criterion 5 (opinion → discussion_prompt). A hard label pair, and I already noted this in my criteria last week. An opinion can also be presented as a discussion_prompt. Every seed misses, and it is the confusion I predicted. On seed 42, 3 real `opinion` posts were called `discussion_prompt` and only 1 went the other way; it is worse on seed 7 (6 of 10). The agreement report helps least here because the staff set doesn't contain this boundary. It does show my slip was a rule applied loosely when a post mixed a fact with a strong stance, and question-shaped opinion posts are the same kind of mixed case. Checking my own labels for that is the first thing I'd do.
 
 ---
 
@@ -356,17 +389,11 @@ Your agreement report is the thing that can tell you which.
 >
 > _Which pile:_"the rule covered it and I applied it loosely"
 
-**2.**
-
-> _The post:_
->
-> _Staff said / I said:_
->
-> _My call, and why:_
->
-> _Which pile:_
-
 **What the pattern in my disagreements tells me:**
+
+What the agreement report says (my evidence on labelling vs model). I agreed with staff on 29 of 30 posts (0.967), above my own 0.90 bar, applying their written rules and not mine. That is evidence my labelling discipline is consistent: if I regularly applied a rule two different ways, 30 posts would show it, and they showed one slip. So for the broad misses (criteria 1, 3 and 4) I lean toward a model-and-data explanation, a small dataset and a 30-post test split, more than toward noisy labels.
+
+Two limits keep that from being conclusive. First, the one disagreement was pile (a): the rule (is the checkable fact load-bearing?) covered it and I applied it loosely, judging how strong the argument was and not whether the number carried it. That is a real labelling error, and the kind that could repeat in my own 200 labels wherever a post has a statistic or a question attached to a strong view. Second, staff labelled `analysis` / `hot_take` / `reaction`, not my model's `discussion_prompt` / `opinion` / `news_tribute`, so the report tests my habits, not those specific boundaries. It can't clear the `opinion` vs `discussion_prompt` boundary, which is where criterion 5 fails, so that boundary stays open as a labelling suspect.
 
 ---
 
@@ -378,13 +405,13 @@ Your agreement report is the thing that can tell you which.
 
 ### Run Log — After
 
-| Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-| --------- | ------ | ------- | ------ | --------- | ------- |
-| 1.        |        |         |        |           |         |
-| 2.        |        |         |        |           |         |
-| 3.        |        |         |        |           |         |
-| 4.        |        |         |        |           |         |
-| 5.        |        |         |        |           |         |
+| Criterion                                                           | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
+| ------------------------------------------------------------------- | ------ | ------- | ------ | --------- | ------- |
+| 1. The model accurately classifies a post at least 80% of the time. |        |         |        |           |         |
+| 2.                                                                  |        |         |        |           |         |
+| 3.                                                                  |        |         |        |           |         |
+| 4.                                                                  |        |         |        |           |         |
+| 5.                                                                  |        |         |        |           |         |
 
 **Did it help, and how do I know:**
 
