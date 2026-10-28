@@ -1,0 +1,164 @@
+[
+  {
+    "seed": 42,
+    "n_test": 30,
+    "accuracy": 0.7666666666666667,
+    "f1_macro": 0.7738743645606391,
+    "per_label": {
+      "discussion_prompt": {
+        "precision": 1.0,
+        "recall": 0.7777777777777778,
+        "f1": 0.875,
+        "support": 9
+      },
+      "opinion": {
+        "precision": 0.7142857142857143,
+        "recall": 0.7692307692307693,
+        "f1": 0.7407407407407407,
+        "support": 13
+      },
+      "news_tribute": {
+        "precision": 0.6666666666666666,
+        "recall": 0.75,
+        "f1": 0.7058823529411765,
+        "support": 8
+      }
+    },
+    "confusion": {
+      "discussion_prompt": {
+        "discussion_prompt": 7,
+        "opinion": 2,
+        "news_tribute": 0
+      },
+      "opinion": {
+        "discussion_prompt": 0,
+        "opinion": 10,
+        "news_tribute": 3
+      },
+      "news_tribute": {
+        "discussion_prompt": 0,
+        "opinion": 2,
+        "news_tribute": 6
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.7359084486961365,
+      "mean_when_wrong": 0.6041424870491028,
+      "accuracy_most_confident_third": 0.9,
+      "accuracy_least_confident_third": 0.4,
+      "n_per_third": 10
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "torch_version": "2.2.2",
+    "max_length": 128
+  },
+  {
+    "seed": 7,
+    "n_test": 30,
+    "accuracy": 0.7333333333333333,
+    "f1_macro": 0.7286324786324786,
+    "per_label": {
+      "discussion_prompt": {
+        "precision": 0.8333333333333334,
+        "recall": 0.5555555555555556,
+        "f1": 0.6666666666666666,
+        "support": 9
+      },
+      "opinion": {
+        "precision": 0.631578947368421,
+        "recall": 0.9230769230769231,
+        "f1": 0.75,
+        "support": 13
+      },
+      "news_tribute": {
+        "precision": 1.0,
+        "recall": 0.625,
+        "f1": 0.7692307692307693,
+        "support": 8
+      }
+    },
+    "confusion": {
+      "discussion_prompt": {
+        "discussion_prompt": 5,
+        "opinion": 4,
+        "news_tribute": 0
+      },
+      "opinion": {
+        "discussion_prompt": 1,
+        "opinion": 12,
+        "news_tribute": 0
+      },
+      "news_tribute": {
+        "discussion_prompt": 0,
+        "opinion": 3,
+        "news_tribute": 5
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.6951239109039307,
+      "mean_when_wrong": 0.5999748706817627,
+      "accuracy_most_confident_third": 1.0,
+      "accuracy_least_confident_third": 0.6,
+      "n_per_third": 10
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "torch_version": "2.2.2",
+    "max_length": 128
+  },
+  {
+    "seed": 2024,
+    "n_test": 30,
+    "accuracy": 0.7666666666666667,
+    "f1_macro": 0.780246913580247,
+    "per_label": {
+      "discussion_prompt": {
+        "precision": 0.6666666666666666,
+        "recall": 0.6666666666666666,
+        "f1": 0.6666666666666666,
+        "support": 9
+      },
+      "opinion": {
+        "precision": 0.7142857142857143,
+        "recall": 0.7692307692307693,
+        "f1": 0.7407407407407407,
+        "support": 13
+      },
+      "news_tribute": {
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333,
+        "support": 8
+      }
+    },
+    "confusion": {
+      "discussion_prompt": {
+        "discussion_prompt": 6,
+        "opinion": 3,
+        "news_tribute": 0
+      },
+      "opinion": {
+        "discussion_prompt": 3,
+        "opinion": 10,
+        "news_tribute": 0
+      },
+      "news_tribute": {
+        "discussion_prompt": 0,
+        "opinion": 1,
+        "news_tribute": 7
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.6239320635795593,
+      "mean_when_wrong": 0.6152989268302917,
+      "accuracy_most_confident_third": 0.8,
+      "accuracy_least_confident_third": 0.8,
+      "n_per_third": 10
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "torch_version": "2.2.2",
+    "max_length": 128
+  }
+]

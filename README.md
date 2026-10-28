@@ -101,9 +101,13 @@ own machine, using a small model fine-tuned on about 180 labelled posts.
 
 **The decision rule I used every time:**
 
-If the post states its own position about a specific show or character, label it `opinion`, even if it ends with a question. If it only asks and states no position, it's `discussion_prompt`. Test: "Could I say what the poster thinks?" If yes, it's `opinion`.
+If the post states its own position about a specific show or character, label it `opinion`, even if it ends or starts with a question or spends the majority of the post asking the question.
+One statement showing the poster's view on the show is enough to form an opinion.
+If it only asks and states no position, it's `discussion_prompt`.
+Test: "Could I say what the poster thinks about the show, character, etc.?" If yes, it's `opinion`.
 
 Other rules: a mixed opinion (some praise, some criticism) is still `opinion`. A post that shares news or a tribute and adds its own view ("RIP James, everyone should watch Apt 23!") is `opinion`. Sarcasm is labelled by the stance the poster means. Memes with no readable text, off-topic posts and recurring mod threads are dropped.
+A post that shares news or tribute and asks a question is a `discussion_prompt`.
 
 ---
 
@@ -218,6 +222,10 @@ news_tribute 34 7 7
 
 **Pre-labelling disclosure:**
 I used AI to pre-label my dataset, and I reviewed it. I labelled about 20-30 posts cold first. AI then pre-labelled the rest, under the definitions I wrote, and I read every row and agreed with the labels except four I changed myself (the Friends and Boy Meets World ranking posts and the "best outfits" post from discussion_prompt to opinion, and the Cold Feet headline from news_tribute to opinion). AI also wrote the script that collected the posts from r/sitcoms and the first drafts of my label definitions and hard cases, which I edited. The final labels, the decision rule and the choice to merge and cut posts are mine.
+
+**Testing Acceptance Criterion**
+
+I used AI to test and explain the results for my criterion.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
@@ -401,17 +409,44 @@ Two limits keep that from being conclusive. First, the one disagreement was pile
 
 **What I changed:**
 
+I relabeled some of my posts and updated my decision rule for differentiating between `discussion_prompts` and `opinions`
+
+**Updated Split**
+
+train 139 · val 31 · test 30
+
+                   train  val  test
+
+label  
+discussion_prompt 43 9 9
+opinion 62 14 13
+news_tribute 34 8 8
+
 **Which diagnosis pointed at it:**
+
+My diagnosis for criteria number 5
 
 ### Run Log — After
 
-| Criterion                                                           | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-| ------------------------------------------------------------------- | ------ | ------- | ------ | --------- | ------- |
-| 1. The model accurately classifies a post at least 80% of the time. |        |         |        |           |         |
-| 2.                                                                  |        |         |        |           |         |
-| 3.                                                                  |        |         |        |           |         |
-| 4.                                                                  |        |         |        |           |         |
-| 5.                                                                  |        |         |        |           |         |
+| Measure                  | Seed 42 | Seed 7 | Seed 2024 | Spread |
+| ------------------------ | ------- | ------ | --------- | ------ |
+| Overall accuracy         | 0.767   | 0.733  | 0.767     | 0.033  |
+| Macro F1                 | 0.774   | 0.729  | 0.780     | 0.052  |
+| F1 — `discussion_prompt` | 0.875   | 0.667  | 0.667     | 0.208  |
+| F1 — `opinion`           | 0.741   | 0.750  | 0.741     | 0.009  |
+| F1 — `news_tribute`      | 0.706   | 0.769  | 0.933     | 0.227  |
+
+Accuracy moved 0.033 across seeds. Stable enough to trust.
+
+| Criterion                                                                                                            | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
+| -------------------------------------------------------------------------------------------------------------------- | ------ | ------- | ------ | --------- | ------- |
+| 1. The model accurately classifies a post at least 80% of the time.                                                  | 0.80   | 0.767   | 0.733  | 0.767     | MISSED  |
+| 2. If someone else labeled the data, we would agree at least 90% of the time.                                        | 0.90   | 0.967   | 0.967  | 0.967     | MET     |
+| 3. (revised) The model's most-confident third of test predictions are right at least 90% of the time, on every seed. | 0.90   | 1.00    | 0.90   | 0.80      | MISSED  |
+| 4. Each label has an F1 score of at least 0.80 for all three labels                                                  | 0.8    | 0.545   | 0.375  | 0.526     | MISSED  |
+| 5. At most 25% of true opinion posts are predicted as discussion_prompt                                              | 0.25   | 0.30    | 0.60   | 0.40      | MISSED  |
+
+Columns are seeds 42, 7 and 2024.
 
 **Did it help, and how do I know:**
 
@@ -424,10 +459,22 @@ Two limits keep that from being conclusive. First, the one disagreement was pile
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
+Three criteria are still missed after the relabeling: 1 (accuracy), 3b (confidence) and 4 (per-label F1). Criterion 5 is now met and criterion 2 was already met. I made one improvement and I stopped because I ran out of time.
+
+**Criterion 1: accuracy 0.767 / 0.733 / 0.767 against 0.80.** This is 3 to 7 points short on every seed. The spread across seeds fell from 0.067 to 0.033, so the miss is now a real gap and not noise. What I'd do next is label more posts, about 30 more per label, because the diagnosis for this criterion was too little data and relabeling didn't add any. I stopped because the improvement I chose targeted the `opinion` / `discussion_prompt` boundary (criterion 5), and a second change in the same run would have made it impossible to tell which one helped.
+
+**Criterion 3b: top third right at least 90%: 0.90 / 1.00 / 0.80.** It passes on two seeds and misses on seed 2024, where the most-confident third is no more accurate than the least-confident third (0.80 vs 0.80). The model's confidence on that seed carries no information, with mean confidence 0.624 when right and 0.615 when wrong. I'd expect more data, or a calibration step, to help, but I haven't tested either. I stopped for the same reason as criterion 1, and because relabeling wasn't aimed at this problem.
+
+**Criterion 4: every label F1 at least 0.80.** The lowest label moved from 0.375–0.545 to 0.667–0.706, which is real progress, but no seed gets all three labels to 0.80. The weak label is now `discussion_prompt` on seeds 7 and 2024 (0.667) and `news_tribute` on seed 42 (0.706). It's possible I over-corrected, so that real discussion prompts are now being read as opinions (see the confusion pattern below), but I haven't checked which rows I moved. The next step would be to compare the posts I relabeled with the `discussion_prompt` posts the model calls `opinion`. I stopped because that check needs the list of changed rows, and I wanted to report the first retest before going further.
+
+**What I'd be careful about.** Each test split has only 30 posts (9 `discussion_prompt`, 13 `opinion`, 8 `news_tribute`), so one post is 11 points of `discussion_prompt` recall. The relabeling also changed the split, so before and after are not like-for-like. I'd want the after numbers to hold on more than 30 test posts before calling any of them settled.
+
 **The gap between what I meant my labels to capture and what the model
 learned:**
 
 <!-- Two sentences. Your confusion matrix is the evidence. -->
+
+I meant `discussion_prompt` to capture posts that invite the group to respond, even when the author adds their own pick, and `opinion` to capture posts that argue a view. After relabeling, the model no longer confuses `opinion` with `discussion_prompt` the way it did (3, 6 and 4 real `opinion` posts called `discussion_prompt` before; 0, 1 and 3 after), but it now over-predicts `opinion`: across the three seeds it called 9 real `discussion_prompt` and 6 real `news_tribute` posts `opinion`, against 7 real `opinion` posts called something else. `opinion` is also my biggest label (62 of 139 training rows), which fits a model defaulting to the label it has seen most.
 
 <!-- ═════════════════════════════════════════════════════════════════════
 
